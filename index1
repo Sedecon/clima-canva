@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotação Centralizada</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      /* Centraliza o conteúdo no meio absoluto da tela (vertical e horizontal) */
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .widget-container {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 1000px;
+      height: 600px;
+      border: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="widget-container">
+    <iframe src="https://www.noticiasagricolas.com.br/widgets/cotacoes?id=228&fonte=Arial%2C%20Helvetica%2C%20sans-serif&tamanho=30&largura=1000&cortexto=333333&corcabecalho=B2C3C6&corlinha=DCE7E9&imagem=true"></iframe>
+  </div>
+
+</body>
+</html>
