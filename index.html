@@ -7,27 +7,39 @@
   <style>
     * {
       box-sizing: border-box;
-    }
-    html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
+    }
+    
+    html, body {
+      width: 100vw;
       height: 100vh;
+      background-color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      /* Centraliza absolutamente tudo dentro da tela */
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .widget-container {
+      width: 90%;
+      max-width: 800px;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #ffffff;
-      font-family: 'Roboto', sans-serif;
     }
-    .widget-wrapper {
-      width: 90%;
-      max-width: 900px;
+
+    /* Força o iframe gerado pelo script a respeitar a largura do container */
+    .widget-container iframe {
+      width: 100% !important;
+      margin: 0 auto !important;
     }
   </style>
 </head>
 <body>
 
-  <div class="widget-wrapper">
+  <div class="widget-container">
     <a class="weatherwidget-io" 
        href="https://forecast7.com/pt/n23d75n51d31/marilandia-do-sul/" 
        data-label_1="MARILÂNDIA DO SUL" 
