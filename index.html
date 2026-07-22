@@ -3,55 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Previsão do Tempo - Marilândia do Sul</title>
+  <title>Previsão do Tempo</title>
   <style>
-    * {
-      box-sizing: border-box;
+    html, body {
       margin: 0;
       padding: 0;
-    }
-    
-    html, body {
-      width: 100vw;
+      width: 100%;
       height: 100vh;
-      background-color: #ffffff;
-      font-family: 'Roboto', sans-serif;
-      /* Centraliza absolutamente tudo dentro da tela */
-      display: grid;
-      place-items: center;
       overflow: hidden;
-    }
-
-    .widget-container {
-      width: 90%;
-      max-width: 800px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Força o iframe gerado pelo script a respeitar a largura do container */
-    .widget-container iframe {
-      width: 100% !important;
-      margin: 0 auto !important;
+      background: transparent;
     }
   </style>
 </head>
 <body>
 
-  <div class="widget-container">
-    <a class="weatherwidget-io" 
-       href="https://forecast7.com/pt/n23d75n51d31/marilandia-do-sul/" 
-       data-label_1="MARILÂNDIA DO SUL" 
-       data-font="Roboto" 
-       data-icons="Climacons Animated" 
-       data-days="5" 
-       data-theme="pure">MARILÂNDIA DO SUL</a>
-  </div>
-
-  <script>
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-  </script>
+  <iframe 
+    srcdoc='
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>body { margin: 0; padding: 0; overflow: hidden; }</style>
+      </head>
+      <body>
+        <a class="weatherwidget-io" href="https://forecast7.com/pt/n23d75n51d31/marilandia-do-sul/" data-label_1="MARILÂNDIA DO SUL" data-font="Roboto" data-icons="Climacons Animated" data-days="5" data-theme="pure">MARILÂNDIA DO SUL</a>
+        <script>
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
+        </script>
+      </body>
+      </html>
+    '
+    style="width:100%; height:100%; border:0;"
+    sandbox="allow-scripts allow-same-origin">
+  </iframe>
 
 </body>
 </html>
